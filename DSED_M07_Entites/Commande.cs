@@ -36,5 +36,14 @@ namespace DSED_M07_Entites
 
             return commande;
         }
+
+        public double SousTotal()
+        {
+            double total = 0;
+
+            this.Articles.ForEach(a => total += (a.Prix * a.Quantitee));
+
+            return total;
+        }
     }
 }
